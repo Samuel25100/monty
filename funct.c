@@ -11,7 +11,6 @@ void reader(char *filename)
 	size_t len = 0;
 	unsigned int counter = 0;
 	stack_t *stack = NULL;
-	char *buff;
 
 	file = fopen(filename, "r");
 	if (file == NULL)
@@ -19,9 +18,8 @@ void reader(char *filename)
 	fprintf(stderr, "Error: Can't open file %s", filename);
 	exit(EXIT_FAILURE);
 	}
-	while ((getline(&buff, &len, file)) != -1)
+	while((getline(&ex_var.buf, &len, file)) != -1)
 	{
-	ex_var.buf = buff;
 	counter++;
 	if (ex_var.buf == NULL)
 		break;
@@ -32,8 +30,7 @@ void reader(char *filename)
 }
 /**
  * functions - determine which func or ope is called
- * @stack: doubly linked list of data
- * @counter: number of line
+ * @buf: read from monty file
  * Return: void
  */
 int functions(stack_t **stack, unsigned int counter)
@@ -51,8 +48,8 @@ int functions(stack_t **stack, unsigned int counter)
 	ex_var.arg = strtok(NULL, "\n ");
 	while (oper_list[i].opcode && token)
 	{
-	if (strcmp(token, oper_list[i].opcode) == 0)
-		{
+	if (strcmp(token,oper_list[i].opcode) == 0)
+		{	
 		oper_list[i].f(stack, counter);
 		break;
 		}
