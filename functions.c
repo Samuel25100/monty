@@ -2,7 +2,7 @@
 exter_var ex_var;
 /**
  * f_push - push the int data to stack
- * @stack: the doubly linked list of the data structure
+ * @head: the doubly linked list of the data structure
  * @line_number: number of line where the command is at in monty
  * Return: void
  */
@@ -21,7 +21,7 @@ void f_push(stack_t **head, unsigned int line_number)
 }
 /**
  * f_pall - print all stack
- * @stack: doubly liked list of data
+ * @head: doubly liked list of data
  * @line_number: number of the line
  * Return: void
  */
@@ -29,7 +29,7 @@ void f_pall(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp;
 	(void)line_number;
-	
+
 	tmp = *head;
 	if (tmp != NULL)
 	{
