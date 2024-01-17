@@ -55,7 +55,6 @@ extern exter_var ex_var;
 
 	/*Functions*/
 int is_num(char *str);
-int _atoi(char *s);
 void *my_calloc(size_t num_el, size_t size_el);
 void reader(char *filename);
 int functions(stack_t **head, unsigned int counter);
