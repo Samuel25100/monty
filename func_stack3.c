@@ -44,7 +44,7 @@ void f_div(stack_t **head, unsigned int line_number)
 	}
 	else if ((tmp->next->n) == 0)
 	{
-	fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+	fprintf(stderr, "L%u: division by zero\n", line_number);
 	free_stack(*head);
 	free(ex_var.buf);
 	exit(EXIT_FAILURE);
@@ -100,7 +100,7 @@ void f_mod(stack_t **head, unsigned int line_number)
 	}
 	else if ((tmp->next->n) == 0)
 	{
-	fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+	fprintf(stderr, "L%u: division by zero\n", line_number);
 	free_stack(*head);
 	free(ex_var.buf);
 	exit(EXIT_FAILURE);
