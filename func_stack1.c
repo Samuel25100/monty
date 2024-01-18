@@ -65,7 +65,7 @@ void add_nodeint(stack_t **head)
 	*head = new;
 }
 /**
- * isnum - checks if a string is a number
+ * is_num - checks if a string is a number
  * @str: string being passed
  * Return: returns 1 if string is a number, 0 otherwise
  */
