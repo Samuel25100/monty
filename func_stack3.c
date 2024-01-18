@@ -123,7 +123,7 @@ void pchar(stack_t **head, unsigned int line_number)
 	{
 	printf("%c\n", (char)i);
 	}
-	else if (*head == NULL)
+	else if (head == NULL)
 	{
 	fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 	free(ex_var.buf);
