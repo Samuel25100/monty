@@ -36,3 +36,25 @@ void f_pop(stack_t **head, unsigned int line_number)
 	free(*head);
 	*head =	tmp->next;
 }
+/**
+ * f_swap - swaps the top two elements of the stack
+ * @head: pointer to the head
+ * @line_number: the number of line at monty
+ * Return: void
+ */
+void f_swap(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp = *head;
+	int i;
+
+	if (tmp == NULL || tmp->next == NULL)
+	{
+	fprintf(stderr, "L%u: can't swap, stack too short", line_number);
+	free_stack(*head);
+	free(ex_var.buf);
+	exit(EXIT_FAILURE);
+	}
+	i = tmp->n;
+	tmp->n = tmp->next->n;
+	tmp->next->n = i;
+}
