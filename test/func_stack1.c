@@ -1,5 +1,4 @@
 #include "monty.h"
-exter_var ex_var;
 /**
  * f_push - push the int data to stack
  * @stack: the doubly linked list of the data structure
@@ -15,7 +14,7 @@ void f_push(stack_t **head, unsigned int line_number)
 	}
 	else
 	{
-	ex_var.push_arg = _atoi(ex_var.arg);
+	ex_var.push_arg = atoi(ex_var.arg);
 	add_nodeint(head);
 	}
 }

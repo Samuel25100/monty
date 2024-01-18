@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,7 +61,9 @@ void reader(char *filename);
 int functions(stack_t **head, unsigned int counter);
 char *_strdup(char *str);
 void add_nodeint(stack_t **head);
+void free_stack(stack_t *head);
 	/*Monty Functions*/
 void f_push(stack_t **head, unsigned int line_number);
 void f_pall(stack_t **head, unsigned int line_number);
+void f_pint(stack_t **head, unsigned int line_number);
 #endif

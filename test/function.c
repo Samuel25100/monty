@@ -1,5 +1,4 @@
 #include "monty.h"
-exter_var ex_var;
 /**
  * reader - read monty file and tokenized them
  * @filename: name of the file
@@ -26,6 +25,7 @@ void reader(char *filename)
 	functions(&stack, counter);
 	}
 	free(ex_var.buf);
+	free_stack(stack);
 	fclose(file);
 }
 /**
@@ -38,9 +38,8 @@ int functions(stack_t **stack, unsigned int counter)
 	unsigned int i = 0;
 	char *token;
 	instruction_t oper_list[] = {
-		{"push", f_push},
-		{"pall", f_pall},
-		{NULL, NULL}};
+		{"push", f_push},{"pall", f_pall},
+		{"pint", f_pint},{NULL, NULL}};
 
 	token = strtok(ex_var.buf, "\n ");
 	if (token && token[0] == '#')
@@ -56,4 +55,20 @@ int functions(stack_t **stack, unsigned int counter)
 	i++;
 	}
 	return (0);
+}
+/**
+ * free_stack - free doubly linked list of monty data
+ * @head: pointer to head
+ * Return: void
+ */
+void free_stack(stack_t *head)
+{
+	stack_t *tmp;
+
+	while (head != NULL)
+	{
+		tmp = head->next;
+		free(head);
+		head = tmp;
+	}
 }
