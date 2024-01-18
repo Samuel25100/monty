@@ -58,3 +58,27 @@ void f_swap(stack_t **head, unsigned int line_number)
 	tmp->n = tmp->next->n;
 	tmp->next->n = i;
 }
+/**
+ * f_add - adds the top two elements of the stack and remove the top
+ * @head: pointer to the head
+ * @line_number: the number of line at monty
+ * Return: void
+ */
+void f_add(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp = *head;
+	int i;
+
+	if (tmp == NULL || tmp->next == NULL)
+	{
+	fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+	free_stack(*head);
+	free(ex_var.buf);
+	exit(EXIT_FAILURE);
+	}
+	i = tmp->n;
+	i = i + tmp->next->n;
+	tmp->next->n = i;
+	free(*head);
+	*head = tmp->next;
+}
