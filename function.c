@@ -42,7 +42,7 @@ int functions(stack_t **stack, unsigned int counter)
 		{"push", f_push}, {"pall", f_pall},
 		{"pint", f_pint}, {"pop", f_pop},
 		{"swap", f_swap}, {"add", f_add},
-		{NULL, NULL}};
+		{"nop", f_nop}, {NULL, NULL}};
 
 	token = strtok(ex_var.buf, "\n ");
 	if (token && token[0] == '#')

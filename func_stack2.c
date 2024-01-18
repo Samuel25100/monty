@@ -82,3 +82,16 @@ void f_add(stack_t **head, unsigned int line_number)
 	free(*head);
 	*head = tmp->next;
 }
+/**
+ * f_nop - doesn’t do anything
+ * @head: pointer to the head
+ * @line_number: the number of line at monty
+ * Return: void
+ */
+void f_nop(stack_t **head, unsigned int line_number)
+{
+	(void)head;
+	(void)line_number;
+
+	return;
+}
