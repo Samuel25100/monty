@@ -27,3 +27,22 @@ void pstr(stack_t **head, unsigned int line_number)
 		printf("\n");
 	}
 }
+/**
+ * rotl -  rotates the stack to the top
+ * @head: @head: pointer to the head
+ * @line_number: the number of line at monty
+ * Return: void
+ */
+void rotl(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp = *head;
+	int i = tmp->n;
+
+	(void)line_number;
+	while (tmp->next)
+	{
+	tmp->n = tmp->next->n;
+	tmp = tmp->next;
+	}
+	tmp->n = i;
+}
