@@ -85,6 +85,7 @@ void f_mul(stack_t **head, unsigned int line_number)
  * top element of the stack by the top element of the stack
  * @head: pointer to the head
  * @line_number: the number of line at monty
+ * Return: void
  */
 void f_mod(stack_t **head, unsigned int line_number)
 {
@@ -114,20 +115,22 @@ void f_mod(stack_t **head, unsigned int line_number)
  * pchar - prints the char at the top of the stack
  * @head: pointer to the head
  * @line_number: the number of line at monty
+ * Return: void
  */
 void pchar(stack_t **head, unsigned int line_number)
 {
-	int i = (*head)->n;
+	int i;
 
-	if ((i >= 65 && i <= 90) || (i >= 65 && i <= 90))
-	{
-	printf("%c\n", (char)i);
-	}
-	else if (head == NULL)
+	if (head == NULL)
 	{
 	fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 	free(ex_var.buf);
 	exit(EXIT_FAILURE);
+	}
+	i = (*head)->n;
+	if ((i >= 65 && i <= 90) || (i >= 97 && i <= 122))
+	{
+	printf("%c\n", (char)i);
 	}
 	else
 	{
