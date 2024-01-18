@@ -10,6 +10,8 @@ void f_push(stack_t **head, unsigned int line_number)
 	if (ex_var.arg == NULL || is_num(ex_var.arg) == 0)
 	{
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	free_stack(*head);
+	free(ex_var.buf);
 	exit(EXIT_FAILURE);
 	}
 	else

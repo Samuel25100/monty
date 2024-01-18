@@ -39,7 +39,8 @@ int functions(stack_t **stack, unsigned int counter)
 	char *token;
 	instruction_t oper_list[] = {
 		{"push", f_push},{"pall", f_pall},
-		{"pint", f_pint},{NULL, NULL}};
+		{"pint", f_pint},{"pop", f_pop},
+		{NULL, NULL}};
 
 	token = strtok(ex_var.buf, "\n ");
 	if (token && token[0] == '#')
