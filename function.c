@@ -17,7 +17,7 @@ void reader(char *filename)
 	fprintf(stderr, "Error: Can't open file %s", filename);
 	exit(EXIT_FAILURE);
 	}
-	while((getline(&ex_var.buf, &len, file)) != -1)
+	while ((getline(&ex_var.buf, &len, file)) != -1)
 	{
 	counter++;
 	if (ex_var.buf == NULL)
@@ -30,7 +30,8 @@ void reader(char *filename)
 }
 /**
  * functions - determine which func or ope is called
- * @buf: read from monty file
+ * @stack: doubly linked list of data
+ * @counter: number of line of monty file
  * Return: void
  */
 int functions(stack_t **stack, unsigned int counter)
@@ -38,8 +39,8 @@ int functions(stack_t **stack, unsigned int counter)
 	unsigned int i = 0;
 	char *token;
 	instruction_t oper_list[] = {
-		{"push", f_push},{"pall", f_pall},
-		{"pint", f_pint},{"pop", f_pop},
+		{"push", f_push}, {"pall", f_pall},
+		{"pint", f_pint}, {"pop", f_pop},
 		{NULL, NULL}};
 
 	token = strtok(ex_var.buf, "\n ");
@@ -48,8 +49,8 @@ int functions(stack_t **stack, unsigned int counter)
 	ex_var.arg = strtok(NULL, "\n ");
 	while (oper_list[i].opcode && token)
 	{
-	if (strcmp(token,oper_list[i].opcode) == 0)
-		{	
+	if (strcmp(token, oper_list[i].opcode) == 0)
+		{
 		oper_list[i].f(stack, counter);
 		break;
 		}

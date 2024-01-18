@@ -1,4 +1,10 @@
 #include "monty.h"
+/**
+ * f_pint - print the value at the top of the stack
+ * @head: pointer to the head
+ * @line_number: the number of line at monty
+ * Return: void
+ */
 void f_pint(stack_t **head, unsigned int line_number)
 {
 	if (*head == NULL)
@@ -10,6 +16,12 @@ void f_pint(stack_t **head, unsigned int line_number)
 	}
 	printf("%d\n", (*head)->n);
 }
+/**
+ * f_pop - removes the top element of the stack
+ * @head: pointer to the head
+ * @line_number: the number of line at monty
+ * Return: void
+ */
 void f_pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp = *head;
