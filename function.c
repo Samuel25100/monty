@@ -44,7 +44,7 @@ int functions(stack_t **stack, unsigned int counter)
 		{"swap", f_swap}, {"add", f_add},
 		{"nop", f_nop}, {"sub", f_sub},
 		{"div", f_div}, {"mul", f_mul},
-		{NULL, NULL}};
+		{"mod", f_mod}, {NULL, NULL}};
 
 	token = strtok(ex_var.buf, "\n ");
 	if (token && token[0] == '#')
@@ -60,20 +60,4 @@ int functions(stack_t **stack, unsigned int counter)
 	i++;
 	}
 	return (0);
-}
-/**
- * free_stack - free doubly linked list of monty data
- * @head: pointer to head
- * Return: void
- */
-void free_stack(stack_t *head)
-{
-	stack_t *tmp;
-
-	while (head != NULL)
-	{
-		tmp = head->next;
-		free(head);
-		head = tmp;
-	}
 }

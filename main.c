@@ -16,3 +16,19 @@ int main(int argc, char **argv)
 	reader(argv[1]);
 	return (0);
 }
+/**
+ * free_stack - free doubly linked list of monty data
+ * @head: pointer to head
+ * Return: void
+ */
+void free_stack(stack_t *head)
+{
+	stack_t *tmp;
+
+	while (head != NULL)
+	{
+	tmp = head->next;
+	free(head);
+	head = tmp;
+	}
+}
