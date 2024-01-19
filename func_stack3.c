@@ -42,7 +42,7 @@ void f_div(stack_t **head, unsigned int line_number)
 	free(ex_var.buf);
 	exit(EXIT_FAILURE);
 	}
-	else if ((tmp->next->n) == 0)
+	else if ((tmp->n) == 0 || (tmp->next->n) == 0)
 	{
 	fprintf(stderr, "L%u: division by zero\n", line_number);
 	free_stack(*head);
