@@ -14,7 +14,7 @@ void reader(char *filename)
 	file = fopen(filename, "r");
 	if (file == NULL)
 	{
-	fprintf(stderr, "Error: Can't open file %s", filename);
+	fprintf(stderr, "Error: Can't open file %s\n", filename);
 	exit(EXIT_FAILURE);
 	}
 	while ((getline(&ex_var.buf, &len, file)) != -1)
