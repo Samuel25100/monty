@@ -60,7 +60,7 @@ int functions(stack_t **stack, unsigned int counter)
 		break;
 		}
 	else if (i == 14)
-		fprintf(stderr,"L%d: unknown instruction %s", counter, token);
+		fprintf(stderr, "L%d: unknown instruction %s\n", counter, token);
 	i++;
 	}
 	return (0);
